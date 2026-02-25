@@ -39,7 +39,124 @@ print("Third inner tuple elements:", c1, c2)
 Output:
 First inner tuple elements: 1 2
 Second inner tuple elements: 3 4
-Third inner tuple elements: 5 6 
+Third inner tuple elements: 5 6
+
+
+practical 2
+Write a Python code to Find the size of Tuples.
+Code:
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50)
+# Find the size (number of elements) in the tuple
+size = len(my_tuple)
+# Print the result
+print("The tuple is:", my_tuple)
+print("Size of the tuple:", size)
+Output:
+The tuple is: (10, 20, 30, 40, 50)
+Size of the tuple: 5
+b. Write a Python code Find sum of tuple elements.
+Code:
+# Define a nested tuple
+nested_tuple = ((1, 2), (3, 4))
+# Flatten and sum
+total = sum(sum(inner) for inner in nested_tuple)
+print("Sum of all nested tuple elements:", total)
+Output:
+Sum of all nested tuple elements: 10
+c. Write a Python code to remove duplicate element from tuple.
+Code:
+# Define a tuple with duplicate elements
+my_tuple = (1, 2, 3, 2, 4, 1, 5, 3)
+# Remove duplicates by converting to a set, then back to a tuple
+unique_tuple = tuple(se
+t(my_tuple))
+# Print results
+print("Original Tuple:", my_tuple)
+print("Tuple after removing duplicates:", unique_tuple)
+
+
+practical 3
+a. Write a python code to retrieve data from HTML file.
+Code:
+HTML Code:
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Sample HTML Page</title>
+</head>
+<body>
+ <h1>Welcome to My Website</h1>
+ <p>This is a paragraph.</p>
+ <p>This is another paragraph.</p>
+ <a href="https://example.com">Example Link</a>
+ <a href="https://openai.com">OpenAI Link</a>
+</body>
+</html>
+Library install : pip install beautifulsoup4
+from bs4 import BeautifulSoup
+# Read the HTML file
+with open('sample.html', 'r', encoding='utf-8') as file:
+ html_content = file.read()
+# Parse the HTML
+soup = BeautifulSoup(html_content, 'html.parser')
+# Retrieve the title
+title = soup.title.text
+print("Title of the page:", title)
+# Retrieve all paragraphs
+paragraphs = soup.find_all('p')
+print("\nParagraphs:")
+for p in paragraphs:
+ print(p.text)
+# Retrieve all links (anchor tags)
+links = soup.find_all('a')
+print("\nLinks:")
+for link in links:
+ print(link.get('href'))
+ ://openai.com
+b. Write a python code to reading and writing text, CSV files
+Code:
+# Writing to a text file
+with open('example.txt', 'w') as file:
+ file.write("Hello, this is a text file.\n")
+ file.write("Welcome to Python file handling.\n")
+# Reading from a text file
+with open('example.txt', 'r') as file:
+ content = file.read()
+ print("Contents of the text file:")
+ print(content)
+CSV file:
+import csv
+# Writing to a CSV file
+data = [
+ ["Name", "Age", "City"],
+ ["Alice", 25, "New York"],
+ ["Bob", 30, "Los Angeles"],
+ ["Charlie", 22, "Chicago"]
+ ]
+ # Write CSV
+with open('example.csv', 'w', newline='') as file:
+ writer = csv.writer(file)
+ writer.writerows(data)
+# Reading from a CSV file
+with open('example.csv', 'r') as file:
+ reader = csv.reader(file)
+ print("Contents of the CSV file:")
+ for row in reader:
+ print(row)
+Output:
+For Text File:
+Contents of the text file:
+Hello, this is a text file.
+Welcome to Python file handling.
+For CSV File:
+Contents of the CSV file:
+['Name', 'Age', 'City']
+['Alice', '25', 'New York']
+['Bob', '30', 'Los Angeles']
+['Charlie', '22', 'Chicago']
+
+
 practical 4
 a. Write a python code on a simple GUI application using
 buttons,textbox etc.
@@ -92,6 +209,8 @@ def greet():
  '''
 if __name__ == "__main__":
  app.run(debug=True)
+
+ 
  practical 5
  a. Python code to create NumPy basics
 Code:
@@ -123,6 +242,8 @@ print("Array a:", a)
 print("Zeros array:\n", b)
 print("Ones array:\n", c)
 print("Random array:\n", d)
+
+ 
 practical 6
 a. Find Minimum Element in Array using Numpy
 import numpy as np
@@ -155,6 +276,8 @@ $Add a column
 arr_with_col = np.hstack((arr, [[5], [6]]))
 print("Array with added row:\n", arr_with_row)
 print("Array with added column:\n", arr_with_c
+
+
 practical 7
 1. Python code to demonstrate basic operations on a single array
 import numpy as np
@@ -189,6 +312,8 @@ print("Sorted Array:", sorted_arr)
 O/P:
 Original Array: ['banana' 'apple' 'grapes' 'mango' 'cherry']
 Sorted Array: ['apple' 'banana' 'cherry' 'grapes' 'mango'] 
+
+
   Practical no.9
 1. Select rows from DataFrame using relational and logical operators
 Example: Select rows where Age > 25 AND Salary < 50000
@@ -217,6 +342,8 @@ df = pd.DataFrame(data)
 df_no_duplicates = df.drop_duplicates()
 print("Original DataFrame:\n", df)
 print("\nDataFrame After Removing Duplicates:\n", df_no_duplicates)
+
+
 practical 8
 a. Write a python code to demonstrate importing pandas libraries
 and create data frame object.
@@ -271,6 +398,8 @@ print(s)
 s["D"] = 40
 print("\nUpdated Series:")
 print(s)
+
+
 practical 10
 a. Write a code to import and export data between pandas and csv files.
 Step 1:
