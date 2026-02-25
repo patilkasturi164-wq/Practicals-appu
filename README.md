@@ -1,0 +1,2 @@
+# Practicals-appu
+App practicals
